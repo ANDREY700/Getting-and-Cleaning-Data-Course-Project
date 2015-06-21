@@ -17,25 +17,25 @@ library("pander")
 #1.Merges the training and the test sets to create one data set. =====================
 # first of all load both of data sets
 
-setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset")
+#setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset")
 
 #load features description
-features <- read.table("features.txt", header=FALSE)
+features <- read.table("UCI HAR Dataset/features.txt", header=FALSE)
 
 # load data
 #training set --------------------------------------------------------------------
 #load
-setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset/train")
+#setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset/train")
 
-y_train <- read.table("y_train.txt", header=FALSE)
-subject_train <- read.table("subject_train.txt", header=FALSE)
-X_train  <- read.table("X_train.txt", header=FALSE)
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt", header=FALSE)
+subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt", header=FALSE)
+X_train  <- read.table("UCI HAR Dataset/train/X_train.txt", header=FALSE)
 
 # load test set -------------------------------------------------------------------
-setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset/test")
-y_test <- read.table(file ="y_test.txt", header = FALSE)
-subject_test  <- read.table(file ="subject_test.txt", header = FALSE)
-X_test   <- read.table(file ="X_test.txt", header = FALSE)
+#setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset/test")
+y_test <- read.table(file ="UCI HAR Dataset/testy_test.txt", header = FALSE)
+subject_test  <- read.table(file ="UCI HAR Dataset/testsubject_test.txt", header = FALSE)
+X_test   <- read.table(file ="UCI HAR Dataset/test_test.txt", header = FALSE)
 
 
 # cleaning data set ======================================================================
@@ -89,8 +89,8 @@ X_data2 <- X_data[X_to_extract]
 #question 3 --------------------------------------------------------------------------
 #3.Uses descriptive activity names to name the activities in the data set
 #loading activity description
-setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset")
-activity_labels <- read.table("activity_labels.txt", header=FALSE)
+#setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project/UCI HAR Dataset")
+activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", header=FALSE)
 
 #creating temporary vector
 X_data2$act2 <- X_data2$activity
@@ -140,7 +140,7 @@ for (selected_subject in 1:30) {
     }
 }
 
-setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project")
+#setwd("G:/32 КУРСЫ/08 Getting and Cleaning Data/Course Project")
 # write a result to external file
 write.table(file ="X_data_mean.txt", x = X_data_mean,  row.name=FALSE)
 
